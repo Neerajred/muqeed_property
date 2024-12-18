@@ -156,63 +156,61 @@
                     <button onclick="alert('Searching...')">Search</button>
                 </div>
             </section>
-            <div class="container">
-                <h1>Available Properties</h1>
-                <div class="row">
+            <div class="container py-5">
+                <h1 class="mb-5 text-center">Available Properties</h1>
+                <div class="row g-4">
                     <t t-foreach="properties" t-as="property">
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card h-100 shadow-sm">
                                 <!-- Make the entire card clickable -->
-                                <a t-att-href="'/property/detail/' + str(property.id)"
-                                   class="text-decoration-none">
+                                <a t-att-href="'/property/detail/' + str(property.id)" class="text-decoration-none text-dark">
                                     <!-- Bootstrap Carousel -->
-                                    <div t-att-id="'carousel-property-' + str(property.id)"
-                                                     class="carousel slide"
-                                                     data-bs-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <t t-set="counter" t-value="0"/>
-                                                        <t t-foreach="property.image_ids" t-as="image">
-                                                            <div t-att-class="'carousel-item ' + ('active' if counter == 0 else '')">
-                                                                <img t-att-src="'/web/image/property.image/%d/image' % image.id"
-                                                                     class="d-block w-100"
-                                                                     alt="Property Image"/>
-                                                            </div>
-                                                            <t t-set="counter" t-value="counter + 1"/>
-                                                        </t>
-                                                    </div>
-                                                    <button class="carousel-control-prev" type="button"
-                                                            t-att-data-bs-target="'#carousel-property-' + str(property.id)"
-                                                            data-bs-slide="prev">
-                                                        <span class="carousel-control-prev-icon" aria-hidden="true"/>
-                                                        <span class="visually-hidden">Previous</span>
-                                                    </button>
-                                                    <button class="carousel-control-next" type="button"
-                                                            t-att-data-bs-target="'#carousel-property-' + str(property.id)"
-                                                            data-bs-slide="next">
-                                                        <span class="carousel-control-next-icon" aria-hidden="true"/>
-                                                        <span class="visually-hidden">Next</span>
-                                                    </button>
+                                    <div t-att-id="'carousel-property-' + str(property.id)" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <t t-set="counter" t-value="0" />
+                                            <t t-foreach="property.image_ids" t-as="image">
+                                                <div t-att-class="'carousel-item ' + ('active' if counter == 0 else '')">
+                                                    <img t-att-src="'/web/image/property.image/%d/image' % image.id"
+                                                        class="d-block w-100" alt="Property Image"
+                                                        style="object-fit: cover; height: 200px;" />
                                                 </div>
+                                                <t t-set="counter" t-value="counter + 1" />
+                                            </t>
+                                        </div>
+
+                                        <!-- Navigation Buttons -->
+                                        <button class="carousel-control-prev" type="button"
+                                            t-att-data-bs-target="'#carousel-property-' + str(property.id)" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            t-att-data-bs-target="'#carousel-property-' + str(property.id)" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        <h5 class="card-title">
-                                            <t t-esc="property.property_name"/>
+                                        <h5 class="card-title text-truncate">
+                                            <t t-esc="property.property_name" />
                                         </h5>
-                                        <p class="card-text">
-                                            <t t-esc="property.description"/>
+                                        <p class="card-text text-muted text-truncate">
+                                            <t t-esc="property.description" />
                                         </p>
                                         <ul class="list-unstyled">
                                             <li>
                                                 <strong>Type:</strong>
-                                                <t t-esc="property.property_type"/>
+                                                <t t-esc="property.property_type" />
                                             </li>
                                             <li>
                                                 <strong>Sales Type:</strong>
-                                                <t t-esc="property.sales_type"/>
+                                                <t t-esc="property.sales_type" />
                                             </li>
                                             <li>
                                                 <strong>Amount: ₹</strong>
-                                                <t t-esc="property.amount"/>
+                                                <t t-esc="property.amount" />
                                             </li>
                                             <li t-if="property.utilities">
                                                 <strong>Utilities Available</strong>
@@ -225,6 +223,7 @@
                     </t>
                 </div>
             </div>
+
         </t>
     </template>
 </odoo>
