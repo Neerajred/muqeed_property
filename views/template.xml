@@ -291,7 +291,7 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <h5 class="card-title text-truncate">
-                                <t t-esc="property.property_name" />
+                                <t t-esc="property.name" />
                             </h5>
                             <p class="card-text text-muted text-truncate">
                                 <t t-esc="property.description" />
