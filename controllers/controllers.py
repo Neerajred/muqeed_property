@@ -8,4 +8,5 @@ _logger = logging.getLogger(__name__)
 
 
 class PropertyResale(http.Controller):
-   
+   def create():
+      pass
