@@ -6,7 +6,7 @@
         <field name="model">my.property</field>
         <field name="arch" type="xml">
             <list>
-                <field name="property_name"/>
+                <field name="name"/>
                 <field name="description"/>
                 <field name="property_type"/>
                 <field name="sales_type"/>
@@ -25,7 +25,7 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="property_name"/>
+                        <field name="name"/>
                         <field name="description"/>
                         <field name="property_type"/>
                         <field name="sales_type"/>

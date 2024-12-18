@@ -294,7 +294,7 @@
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <t t-esc="property.property_name"/>
+                                            <t t-esc="property.name"/>
                                         </h5>
                                         <p class="card-text">
                                             <t t-esc="property.description"/>

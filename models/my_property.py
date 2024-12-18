@@ -5,7 +5,7 @@ class MyProperty(models.Model):
     _name = 'my.property'
     _description = 'Estate Property'
 
-    property_name = fields.Char(string="Property Name", required=True, )
+    name = fields.Char(string="Property Name", required=True, )
     description = fields.Text(string="Description")
     property_type = fields.Selection([('vacant_land','Vacant Land'),('villa','Villa'),('house','House'),('commercial_space','Commercial Space')],string="Property Type")
     sales_type = fields.Selection([('sale', 'Sale'), ('rent', 'Rent')],string="Sales Type",default='sale')

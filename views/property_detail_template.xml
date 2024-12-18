@@ -189,7 +189,7 @@
 
                 </xpath>
                 <div class="container">
-                    <h1 t-esc="property.property_name" class="my-4"/>
+                    <h1 t-esc="property.name" class="my-4"/>
                     <div class="row">
                         <div class="col-md-3">
                             <div>
@@ -411,7 +411,7 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                     <h5 class="card-title">
-                                                        <t t-esc="property.property_name"/>
+                                                        <t t-esc="property.name"/>
                                                     </h5>
                                                     <p class="card-text">
                                                         <t t-esc="property.description"/>
